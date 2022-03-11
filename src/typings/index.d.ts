@@ -55,6 +55,7 @@ export interface IUser {
   bank: number;
   coins: number;
   lastDaily: number;
+  lastRob: number;
 }
 
 export interface ICountdown {
