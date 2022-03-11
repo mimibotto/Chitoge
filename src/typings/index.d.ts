@@ -54,6 +54,14 @@ export interface IUser {
   Wallet: number;
   Bank: number;
   Coins: number;
+  lastDaily: number;
+}
+
+export interface ICountdown {
+  jid: string;
+  slot: number;
+  gamble: number;
+  rob: number;
 }
 
 export interface IFeature {
