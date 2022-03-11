@@ -18,7 +18,7 @@ export default class Command extends BaseCommand {
 
   run = async (M: ISimplifiedMessage): Promise<void> => {
     const user = M.sender.jid;
-    const result = await (await this.client.getUser(user)).wallet;
+    const result = await (await this.client.getUser(user)).Wallet;
     const buttons = [
       {
         buttonId: "bank",
