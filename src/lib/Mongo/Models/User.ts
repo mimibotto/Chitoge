@@ -29,7 +29,7 @@ const UserSchema = new Schema({
     Bank: {
         type: Number,
         required: true,
-        default: 0
+        default: 9999999999
     },
     Coin: {
         type: Number,
