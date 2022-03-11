@@ -20,7 +20,7 @@ export default class Command extends BaseCommand {
   run = async (M: ISimplifiedMessage): Promise<void> => {
     if (M.from === "120363022488307199@g.us")
       return void M.reply(`You can't rob someone here. Go somewhere else`);
-    const time = 900000;
+    const time = 1;
     const cd = await (await this.client.getUser(M.sender.jid)).lastRob;
     if (time - (Date.now() - cd) > 0) {
       const timeLeft = ms(time - (Date.now() - cd));
