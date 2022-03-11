@@ -26,7 +26,7 @@ const UserSchema = new Schema({
         required: true,
         default: 0
     },
-    bank: {
+    Bank: {
         type: Number,
         required: true,
         default: 0
