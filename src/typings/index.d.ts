@@ -52,6 +52,8 @@ export interface IUser {
   warnings: number;
   Xp: number;
   Wallet: number;
+  Bank: number;
+  Coins: number;
 }
 
 export interface IFeature {
