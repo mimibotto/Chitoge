@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
     super(client, handler, {
       command: "bank",
       description: "Displays user-bank",
-      category: "economy",
+      category: "games",
       usage: `${client.config.prefix}bank`,
       baseXp: 10,
     });
@@ -18,7 +18,7 @@ export default class Command extends BaseCommand {
 
   run = async (M: ISimplifiedMessage): Promise<void> => {
     const user = M.sender.jid;
-    const result = await (await this.client.getUser(user)).bank;
+    const result = await (await this.client.getUser(user)).Bank;
     const buttons = [
       {
         buttonId: "wallet",
