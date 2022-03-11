@@ -17,6 +17,7 @@ import {
   ISession,
   ISimplifiedMessage,
   IUserModel,
+  ICountdown,
 } from "../typings";
 import Utils from "./Utils";
 import DatabaseHandler from "../Handlers/DatabaseHandler";
@@ -203,6 +204,15 @@ export default class WAClient extends Base {
     return user;
   };
 
+  getCd = async (jid: string): Promise<ICountdown> => {
+    let user = await this.DB.cd.findOne({ jid });
+    if (!user)
+      user = await new this.DB.cd({
+        jid,
+      }).save();
+    return user;
+  };
+
   getBuffer = async (url: string): Promise<Buffer> =>
     (await axios.get<Buffer>(url, { responseType: "arraybuffer" })).data;
 
@@ -239,6 +249,56 @@ export default class WAClient extends Base {
       await new this.DB.user({
         jid,
         Xp,
+      }).save();
+  };
+
+ deposit = async (jid: string, amount: number): Promise<void> => {
+    const result = await this.DB.user.updateMany(
+      { jid },
+      { $inc: { wallet: -amount, bank: amount } }
+    );
+    if (!result.nModified)
+      await new this.DB.user({
+        jid,
+        wallet: -amount,
+        bank: amount,
+      }).save();
+  };
+
+  withdraw = async (jid: string, amount: number): Promise<void> => {
+    const result = await this.DB.user.updateMany(
+      { jid },
+      { $inc: { wallet: amount, bank: -amount } }
+    );
+    if (!result.nModified)
+      await new this.DB.user({
+        jid,
+        wallet: amount,
+        bank: -amount,
+      }).save();
+  };
+
+  reduceGold = async (jid: string, amount: number): Promise<void> => {
+    const result = await this.DB.user.updateOne(
+      { jid },
+      { $inc: { wallet: -amount } }
+    );
+    if (!result.nModified)
+      await new this.DB.user({
+        jid,
+        wallet: -amount,
+      }).save();
+  };
+ 
+  addGold = async (jid: string, amount: number): Promise<void> => {
+    const result = await this.DB.user.updateOne(
+      { jid },
+      { $inc: { wallet: amount } }
+    );
+    if (!result.nModified)
+      await new this.DB.user({
+        jid,
+        wallet: amount,
       }).save();
   };
 
