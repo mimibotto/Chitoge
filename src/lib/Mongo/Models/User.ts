@@ -35,8 +35,17 @@ const UserSchema = new Schema({
         type: Number,
         required: true,
         default: 0
-    }, 
+    },
     lastDaily: {
+        type: Number
+    },
+    lastRob: {
+        type: Number
+    },
+    lastGamble: {
+        type: Number
+    },
+    lastSlot: {
         type: Number
     }
 })
