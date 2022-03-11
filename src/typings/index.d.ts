@@ -51,7 +51,7 @@ export interface IUser {
   ban: boolean;
   warnings: number;
   Xp: number;
-  Wallet: number;
+  wallet: number;
   Bank: number;
   Coins: number;
   lastDaily: number;
