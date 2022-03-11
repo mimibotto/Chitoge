@@ -52,7 +52,7 @@ export interface IUser {
   warnings: number;
   Xp: number;
   wallet: number;
-  Bank: number;
+  bank: number;
   coins: number;
   lastDaily: number;
   lastRob: number;
