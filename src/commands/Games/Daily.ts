@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
         `You have already claimed your daily gold recently. Claim again in *${timeLeft.hours} hour(s), ${timeLeft.minutes} minute(s), ${timeLeft.seconds} second(s)*`
       );
     }
-    await this.client.addGold(user, 1000);
+    await this.client.addGold(user, 10000);
     await this.client.DB.user.updateOne(
       { jid: user },
       { $set: { lastDaily: Date.now() } }
