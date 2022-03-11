@@ -8,7 +8,7 @@ export default class Command extends BaseCommand {
   constructor(client: WAClient, handler: MessageHandler) {
     super(client, handler, {
       command: "addgold",
-      description: "",
+      description: "adds gold",
       aliases: ["bcg"],
       category: "dev",
       dm: true,
