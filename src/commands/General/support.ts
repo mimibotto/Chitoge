@@ -20,7 +20,7 @@ export default class Command extends BaseCommand {
         (await this.client.sendMessage(
         M.sender.jid,
         `*HELLO THERE 🎉*\n\n
-        _*BEYOND CASINO*_:https://chat.whatsapp.com/Fw9CHwQnXkUGUsXHYWGSpu\n\n`,
+        _*🎰Casino🎰*_:https://chat.whatsapp.com/Dl6SQqyC30g2ETArANEcev\n\n`,
            MessageType.text
         ))
        
