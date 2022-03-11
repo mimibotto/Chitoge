@@ -5,12 +5,6 @@ const cdSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-  },
-  gamble: {
-      type: Number
-  },
-  slot: {
-      type: Number
    },
   rob: {
       type:Number
