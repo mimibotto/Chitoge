@@ -8,27 +8,27 @@ import { MessageType, Mimetype } from "@adiwajshing/baileys";
 export default class Command extends BaseCommand {
   constructor(client: WAClient, handler: MessageHandler) {
     super(client, handler, {
-      command: "wallet",
-      description: "Displays user-wallet",
+      command: "bank",
+      description: "Displays user-bank",
       category: "economy",
-      usage: `${client.config.prefix}wallet`,
+      usage: `${client.config.prefix}bank`,
       baseXp: 10,
     });
   }
 
   run = async (M: ISimplifiedMessage): Promise<void> => {
     const user = M.sender.jid;
-    const result = await (await this.client.getUser(user)).wallet;
+    const result = await (await this.client.getUser(user)).bank;
     const buttons = [
       {
-        buttonId: "bank",
-        buttonText: { displayText: `${this.client.config.prefix}bank` },
+        buttonId: "wallet",
+        buttonText: { displayText: `${this.client.config.prefix}wallet` },
         type: 1,
       },
       ];
     
       const buttonMessage: any = {
-      contentText: `👛 *Wallet | ${M.sender.username}*\n\n🪙 *Gold: ${result}*`,
+      contentText: `🏦 *Bank | ${M.sender.username}*\n\n🪙 *Gold: ${result}*`,
       footerText: "🎇 Beyond 🎇",
       buttons: buttons,
       headerType: 1,
