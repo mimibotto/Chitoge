@@ -43,7 +43,7 @@ export default class Command extends BaseCommand {
           categories[info.config.category].push(info);
         }
       }
-      let text = `👋🏻 (💙ω💙) Konichiwa! *@${
+      let text = `👋🏻 (💙ω💙) Hallo *@${
         user.split("@")[0]
       }*, I'm Chitoge.\n\nMy prefix is - "${
         this.client.config.prefix
