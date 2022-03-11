@@ -29,12 +29,15 @@ const UserSchema = new Schema({
     Bank: {
         type: Number,
         required: true,
-        default: 9999999999
+        default: 
     },
     Coin: {
         type: Number,
         required: true,
         default: 0
+    }, 
+    lastDaily: {
+        type: Number
     }
 })
 export default model<IUserModel>('users', UserSchema)
