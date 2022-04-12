@@ -26,6 +26,7 @@ export type TCategory =
 	| "coding"
 	| "dev"
 	| "fun"
+        | "casino"
 	| "games"
 	| "educative"
 	| "general"
