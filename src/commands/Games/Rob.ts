@@ -67,7 +67,7 @@ export default class Command extends BaseCommand {
       return void M.reply(
         `You idiot *@${
           M.sender.jid.split("@")[0]
-        }*, you got caught and paid *${gold} gold* to *@${
+        }*, you got caught and paid *${gold} US Dollars* to *@${
           target?.split("@")[0]
         }*`,
         MessageType.text,
@@ -81,7 +81,7 @@ export default class Command extends BaseCommand {
       return void M.reply(
         `*@${M.sender.jid.split("@")[0]}* has robbed a weak comrade 🕺 *@${
           target?.split("@")[0]
-        }* and got away with *${gold} gold!*`,
+        }* and got away with *${gold} Dollars!*`,
         MessageType.text,
         undefined,
         [target || "", M.sender.jid]
