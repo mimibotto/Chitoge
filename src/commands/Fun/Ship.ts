@@ -19,15 +19,15 @@ export default class Command extends BaseCommand {
         const percentage = Math.floor(Math.random() * 100)
         let sentence
         if (percentage < 25) {
-            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\tThere's still time to reconsider your choices`
+            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\tRest and the one who shipped should stop forcing it`
         } else if (percentage < 50) {
-            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t Good enough, I guess! 💫`
+            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t Weird👀, frieeeend zone🕺`
         } else if (percentage < 75) {
-            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t\tStay together and you'll find a way ⭐️`
+            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t\tJust ship another person,yall friends man😐`
         } else if (percentage < 90) {
-            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tAmazing! You two will be a good couple 💖 `
+            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t\tHaii too much connection yall are fated`
         } else {
-            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tYou two are fated to be together 💙`
+            sentence = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tJust date already 🌝`
         }
 
         if (M.quoted?.sender && !M.mentioned.includes(M.quoted.sender)) M.mentioned.push(M.quoted.sender)
@@ -48,7 +48,8 @@ export default class Command extends BaseCommand {
         })
         // choose a random gif from the array
         const gifLink = ship[Math.floor(Math.random() * ship.length)].gifLink
-        let caption = `\t❣️ *Matchmaking...* ❣️ \n`
+        let caption = `\t 🌝🍀Wick Ltd Love test🍀🌝
+
         caption += `\t\t---------------------------------\n`
         caption += `@${user1.split('@')[0]}  x  @${user2.split('@')[0]}\n`
         caption += `\t\t---------------------------------\n`
