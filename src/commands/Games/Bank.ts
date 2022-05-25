@@ -21,8 +21,8 @@ export default class Command extends BaseCommand {
     const result = await (await this.client.getUser(user)).bank;
     const buttons = [
       {
-        buttonId: "mycash",
-        buttonText: { displayText: `${this.client.config.prefix}mycash` },
+        buttonId: "bank",
+        buttonText: { displayText: `${this.client.config.prefix}bank` },
         type: 1,
       },
       ];
