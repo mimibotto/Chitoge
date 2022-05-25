@@ -37,24 +37,24 @@ export default class Command extends BaseCommand {
       return void M.reply(`Mention or quote the user.`);
     const results = [
       "robbed",
+      "robbed",
       "caught",
-      "caught",
+      "robbed",
+      "robbed",
       "caught",
       "robbed",
       "caught",
-      "caught",
-      "caught",
-      "caught",
+      "robbed",
       "caught",
     ];
     const wallet1 = await (await this.client.getUser(user)).wallet;
     const wallet2 = await (await this.client.getUser(target!)).wallet;
-    if (wallet1 < 250)
+    if (wallet1 < 1)
       return void M.reply(
-        `🟥 *You need at least 250 gold in your wallet to rob someone.*`
+        `🤦*You cant rob if u broke.*`
       );
-    if (wallet2 < 250)
-      return void M.reply(`Please leave this poor person alone.`);
+    if (wallet2 < 1)
+      return void M.reply(`Please leave him, he doesn't even have money to buy bread😐`);
     await this.client.DB.user.updateOne(
       { jid: user },
       { $set: { lastRob: Date.now() } }
@@ -65,7 +65,7 @@ export default class Command extends BaseCommand {
       await this.client.reduceGold(user, gold);
       await this.client.addGold(target!, gold);
       return void M.reply(
-        `Congratulations *@${
+        `You idiot *@${
           M.sender.jid.split("@")[0]
         }*, you got caught and paid *${gold} gold* to *@${
           target?.split("@")[0]
@@ -79,7 +79,7 @@ export default class Command extends BaseCommand {
       await this.client.addGold(user, gold);
       await this.client.reduceGold(target!, gold);
       return void M.reply(
-        `*@${M.sender.jid.split("@")[0]}* robbed *@${
+        `*@${M.sender.jid.split("@")[0]}* has robbed a weak comrade 🕺 *@${
           target?.split("@")[0]
         }* and got away with *${gold} gold!*`,
         MessageType.text,
