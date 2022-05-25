@@ -20,11 +20,11 @@ export default class Command extends BaseCommand {
         (await this.client.sendMessage(
         M.sender.jid,
         `*HELLO THERE 🎉*\n\n
-        _*🎰Casino🎰*_:https://chat.whatsapp.com/Dl6SQqyC30g2ETArANEcev\n\n`,
+        _Inbox wa.me/263774021355  `,
            MessageType.text
         ))
        
-        return void M.reply('Sent you the Group Link in personal message')
+        return void M.reply('Sent you a personal message')
         
 
         }
