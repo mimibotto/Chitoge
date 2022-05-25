@@ -43,16 +43,16 @@ export default class Command extends BaseCommand {
           categories[info.config.category].push(info);
         }
       }
-      let text = `👋🏻 (💙ω💙) Hallo *@${
+      let text = `Hi *@${
         user.split("@")[0]
-      }*, I'm Chitoge.\n\nMy prefix is - "${
+      }*, I'm ᴊᴏʜɴᴡɪᴄᴋʙᴏᴛ.\n\nMy prefix is - "${
         this.client.config.prefix
       }"\n\nThe usable commands are listed below.\n\n`;
       const keys = Object.keys(categories);
       for (const key of keys)
-        text += `*━━━❰ ${this.client.util.capitalize(
+        text += `* ${this.client.util.capitalize(
           key
-        )} ❱━━━*\n\`\`\`${categories[key]
+        )} *\n\`\`\`${categories[key]
           .map((command) => command.config?.command)
           .join(", ")}\`\`\`\n\n`;
       return void this.client.sendMessage(
@@ -75,7 +75,7 @@ export default class Command extends BaseCommand {
       command: command.config.command,
     });
     M.reply(
-      `🚀 *Command:* ${this.client.util.capitalize(
+      ` *Command:* ${this.client.util.capitalize(
         command.config?.command
       )}\n📉 *Status:* ${
         state ? "Disabled" : "Available"
