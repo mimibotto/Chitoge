@@ -28,8 +28,8 @@ export default class Command extends BaseCommand {
       ];
     
       const buttonMessage: any = {
-      contentText: `💰 *wallet | ${M.sender.username}*\n\n🪙 *Gold: ${result}*`,
-      footerText: "🎇 Beyond 🎇",
+      contentText: `💰 *cash | ${M.sender.username}*\n\n🪙 *US Dollar: ${result}*`,
+      footerText: "Wick Ltd.",
       buttons: buttons,
       headerType: 1,
       };
