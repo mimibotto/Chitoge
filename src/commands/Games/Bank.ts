@@ -21,15 +21,15 @@ export default class Command extends BaseCommand {
     const result = await (await this.client.getUser(user)).bank;
     const buttons = [
       {
-        buttonId: "wallet",
-        buttonText: { displayText: `${this.client.config.prefix}wallet` },
+        buttonId: "mycash",
+        buttonText: { displayText: `${this.client.config.prefix}mycash` },
         type: 1,
       },
       ];
     
       const buttonMessage: any = {
-      contentText: `🏦 *Bank | ${M.sender.username}*\n\n🪙 *Gold: ${result}*`,
-      footerText: "🎇 Beyond 🎇",
+      contentText: `🏦 *Bank | ${M.sender.username}*\n\n🪙 *US.Dollars🧸: ${result}*`,
+      footerText: "Wick Ltd.",
       buttons: buttons,
       headerType: 1,
       };
