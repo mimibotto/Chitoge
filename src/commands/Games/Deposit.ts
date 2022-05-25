@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
     /*eslint-disable @typescript-eslint/no-explicit-any*/
     const user = M.sender.jid;
     if (!joined)
-      return void M.reply(`Specify the amount of gold to deposit, Baka!`);
+      return void M.reply(`Specify the amount of money you want to deposit, Baka!`);
     const amount: any = joined.trim();
     if (isNaN(amount))
       return void M.reply(
@@ -41,18 +41,18 @@ export default class Command extends BaseCommand {
       },
     ];
 
-    if (bank >= 5000000)
+    if (bank >= 500000000)
       return void M.reply(
-        `🟥 *You can't have more than 5000000 gold in your bank*.`
+        `😑 *You can't have more than 500000000 US dollars in your bank*.`
       );
     if (wallet < amount)
       return void M.reply(
-        `🟥 *You don't have sufficient amount of gold in your wallet to make this transaction*.`
+        `😂 *You are too broke to make this transaction, get a life*.`
       );
     await this.client.deposit(user, amount);
     const buttonMessage: any = {
-      contentText: `You have transferred *${amount} gold* to your bank.`,
-      footerText: "🎇 Beyond 🎇",
+      contentText: `You have transferred *${amount} US dollars* to your bank.`,
+      footerText: "Wick Ltd.",
       buttons: buttons,
       headerType: 1,
     };
