@@ -38,14 +38,14 @@ export default class Command extends BaseCommand {
     const wallet = await (await this.client.getUser(user)).wallet;
     if (amount > wallet)
       return void M.reply(
-        `🟥 *You need ${amount - wallet} gold more to make this transaction*.`
+        `🙂 * Bruh you need ${amount - wallet} gold more to make this transaction*.`
       );
     await this.client.reduceGold(user, amount);
     await this.client.addGold(target!, amount);
     await M.reply(
       `*@${user.split("@")[0]}* gave *${amount} gold* to *@${
         target?.split("@")[0]
-      }*🎉`,
+      }*🕺`,
       MessageType.text,
       undefined,
       [user || "", target!]
